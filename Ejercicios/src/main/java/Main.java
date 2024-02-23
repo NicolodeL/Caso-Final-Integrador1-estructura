@@ -1,5 +1,7 @@
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,6 +10,9 @@ public class Main {
         System.out.println();
         System.out.println("Recursos y Suministros:");
         Ejercicio2.main(args);
+        System.out.println();
+        System.out.println("Sistema de Alerta y Monitoreo:");
+        Ejercicio3.main(args);
     }
 
     public static class Ejercicio1 {
@@ -83,5 +88,80 @@ public class Main {
                 System.out.println("Maximum consumption: " + water.calculateMaximumConsumption());
             }
         }
+    public static class Ejercicio3 {
+        private double radiationLevel;
+        private double temperature;
+        private double pressure;
 
+        public Ejercicio3(double radiationLevel, double temperature, double pressure) {
+            this.radiationLevel = radiationLevel;
+            this.temperature = temperature;
+            this.pressure = pressure;
+        }
+
+        public void monitorLevels() {
+            if (radiationLevel > 100) {
+                System.out.println("Alert: High radiation level!");
+            }
+            if (temperature > 100) {
+                System.out.println("Alert: High temperature!");
+            }
+            if (pressure > 100) {
+                System.out.println("Alert: High pressure!");
+            }
+        }
+
+        public void Ejercicio3() {
+            if (radiationLevel > 100) {
+                System.out.println("Suggestion: Decrease radiation level.");
+            }
+            if (temperature > 100) {
+                System.out.println("Suggestion: Decrease temperature.");
+            }
+            if (pressure > 100) {
+                System.out.println("Suggestion: Decrease pressure.");
+            }
+        }
+
+        public List<Integer> identifyCriticalEvents(int n) {
+            List<Integer> criticalEvents = new ArrayList<>();
+            for (int i = 2; n > 0; i++) {
+                if (isPrime(i)) {
+                    criticalEvents.add(i);
+                    n--;
+                }
+            }
+            return criticalEvents;
+        }
+
+        private boolean isPrime(int num) {
+            if (num <= 1) {
+                return false;
+            }
+            for (int i = 2; i < num; i++) {
+                if (num % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public List<Integer> decomposeIntoPrimeFactors(int num) {
+            List<Integer> primeFactors = new ArrayList<>();
+            for (int i = 2; i <= num; i++) {
+                while (num % i == 0) {
+                    primeFactors.add(i);
+                    num /= i;
+                }
+            }
+            return primeFactors;
+        }
+        public static void main(String[] args) {
+            Ejercicio3 ejercicio3 = new Ejercicio3(150, 110, 90);
+            ejercicio3.monitorLevels();
+            ejercicio3.Ejercicio3();
+            System.out.println("Critical events: " + ejercicio3.identifyCriticalEvents(5));
+            System.out.println("Prime factors: " + ejercicio3.decomposeIntoPrimeFactors(60));
     }
+    }
+}
