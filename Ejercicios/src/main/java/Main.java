@@ -3,8 +3,11 @@ import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        System.out.println("Cronometro Cosmico:");
         Ejercicio1.main(args);
+        System.out.println();
+        System.out.println("Recursos y Suministros:");
+        Ejercicio2.main(args);
     }
 
     public static class Ejercicio1 {
@@ -32,4 +35,53 @@ public class Main {
             printMaxValues();
         }
     }
-}
+        public static class Ejercicio2 {
+            private String name;
+            private double dailyConsumptionRate;
+            private double weeklyConsumptionRate;
+            private double monthlyConsumptionRate;
+
+            public Ejercicio2(String name, double dailyConsumptionRate, double weeklyConsumptionRate, double monthlyConsumptionRate) {
+                this.name = name;
+                this.dailyConsumptionRate = dailyConsumptionRate;
+                this.weeklyConsumptionRate = weeklyConsumptionRate;
+                this.monthlyConsumptionRate = monthlyConsumptionRate;
+            }
+
+            public double calculateTotalConsumptionForDays(int days) {
+                return dailyConsumptionRate * days;
+            }
+
+            public double calculateTotalConsumptionForWeeks(int weeks) {
+                return weeklyConsumptionRate * weeks;
+            }
+
+            public double calculateTotalConsumptionForMonths(int months) {
+                return monthlyConsumptionRate * months;
+            }
+
+            public double calculateAverageConsumption(int days, int weeks, int months) {
+                double totalConsumption = calculateTotalConsumptionForDays(days) + calculateTotalConsumptionForWeeks(weeks) + calculateTotalConsumptionForMonths(months);
+                double totalPeriods = days + (weeks * 7) + (months * 30); // Assuming 30 days in a month
+                return totalConsumption / totalPeriods;
+            }
+
+            public double calculateMinimumConsumption() {
+                return Math.min(dailyConsumptionRate, Math.min(weeklyConsumptionRate, monthlyConsumptionRate));
+            }
+
+            public double calculateMaximumConsumption() {
+                return Math.max(dailyConsumptionRate, Math.max(weeklyConsumptionRate, monthlyConsumptionRate));
+            }
+            public static void main(String[] args) {
+                Ejercicio2 water = new Ejercicio2("Water", 2.5, 17.5, 75);
+                System.out.println("Total consumption for 10 days: " + water.calculateTotalConsumptionForDays(10));
+                System.out.println("Total consumption for 2 weeks: " + water.calculateTotalConsumptionForWeeks(2));
+                System.out.println("Total consumption for 3 months: " + water.calculateTotalConsumptionForMonths(3));
+                System.out.println("Average consumption for 10 days, 2 weeks, and 3 months: " + water.calculateAverageConsumption(10, 2, 3));
+                System.out.println("Minimum consumption: " + water.calculateMinimumConsumption());
+                System.out.println("Maximum consumption: " + water.calculateMaximumConsumption());
+            }
+        }
+
+    }
