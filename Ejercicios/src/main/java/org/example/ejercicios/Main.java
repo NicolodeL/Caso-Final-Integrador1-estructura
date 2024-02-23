@@ -1,8 +1,9 @@
+package org.example.ejercicios;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("Cronometro Cosmico:");
@@ -19,10 +20,8 @@ public class Main {
         private static final double EARTH_DAYS_IN_NEW_PLANET_DAY = 1.5;
 
         public static double convertSeconds(long seconds) {
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(new Date(seconds * 1000)); // Convertir segundos a milisegundos
-            double days = calendar.get(Calendar.DAY_OF_YEAR) + calendar.get(Calendar.HOUR_OF_DAY) / 24.0 + calendar.get(Calendar.MINUTE) / (24.0 * 60) + calendar.get(Calendar.SECOND) / (24.0 * 60 * 60);
-            return days / EARTH_DAYS_IN_NEW_PLANET_DAY;
+            double earthDays = seconds / 86400.0;
+            return earthDays * 1.5;
         }
 
         public static void printMaxValues() {
