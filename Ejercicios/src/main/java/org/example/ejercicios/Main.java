@@ -20,8 +20,8 @@ public class Main {
         private static final double EARTH_DAYS_IN_NEW_PLANET_DAY = 1.5;
 
         public static double convertSeconds(long seconds) {
-            double earthDays = seconds / 86400.0;
-            return earthDays * 1.5;
+            double newPlanetDays = seconds / 3600.0;
+            return newPlanetDays * 1.5;
         }
 
         public static void printMaxValues() {

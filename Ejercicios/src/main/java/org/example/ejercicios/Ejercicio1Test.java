@@ -7,7 +7,7 @@ public class Ejercicio1Test {
     @Test
     public void testConvertSeconds() {
         double result = Main.Ejercicio1.convertSeconds(3600);
-        assertEquals(0.0625, result, 0.001, "3600 seconds should be 1.5 days on the new planet");
+        assertEquals(1.5, result, 0.001, "3600 seconds should be 1.5 days on the new planet");
     }
 
     @Test
