@@ -19,6 +19,9 @@ public class Main {
         System.out.println();
         System.out.println("Navegador Estelar:");
         Ejercicio5.main(args);
+        System.out.println();
+        System.out.println("Comunicador Interplanetario:");
+        Ejercicio6.main(args);
     }
 
     public static class Ejercicio1 {
@@ -276,6 +279,78 @@ public class Main {
             int[][] product = Ejercicio5.multiplyMatrices(matrixA, matrixB);
 
             // Aquí puedes hacer algo con la ruta y el producto de las matrices, como mostrarlos
+        }
+    }
+    public static class Ejercicio6 {
+        private List<String> messageStorage;
+
+        public Ejercicio6() {
+            this.messageStorage = new ArrayList<>();
+        }
+
+        public String translateMessage(String message) {
+            // Implementa la lógica para traducir el mensaje
+            return "";
+        }
+
+        public boolean verifyMessage(String message) {
+            // Implementa la lógica para verificar la integridad y relevancia del mensaje
+            return false;
+        }
+
+        public void sendMessage(String message) {
+            // Implementa la lógica para enviar un mensaje
+        }
+
+        public String receiveMessage() {
+            // Implementa la lógica para recibir un mensaje
+            return "";
+        }
+
+        public Map<Character, Integer> countCharacters(String message) {
+            // Implementa la lógica para contar y analizar caracteres específicos en un mensaje
+            return new HashMap<>();
+        }
+
+        public boolean isPalindrome(String text) {
+            // Implementa la lógica para verificar si un texto es un palíndromo
+            return false;
+        }
+
+        public String reverseText(String text) {
+            // Implementa la lógica para revertir un texto
+            return "";
+        }
+        public static void main(String[] args) {
+            // Crear una instancia de Ejercicio6
+            Ejercicio6 communicator = new Ejercicio6();
+
+            // Traducir un mensaje
+            String translatedMessage = communicator.translateMessage("Hello, world!");
+            System.out.println("Translated message: " + translatedMessage);
+
+            // Verificar un mensaje
+            boolean isMessageValid = communicator.verifyMessage("Hello, world!");
+            System.out.println("Is message valid: " + isMessageValid);
+
+            // Enviar un mensaje
+            communicator.sendMessage("Hello, world!");
+
+            // Recibir un mensaje
+            String receivedMessage = communicator.receiveMessage();
+            System.out.println("Received message: " + receivedMessage);
+
+            // Contar caracteres en un mensaje
+            Map<Character, Integer> characterCounts = communicator.countCharacters("Hello, world!");
+            System.out.println("Character counts: " + characterCounts);
+
+            // Verificar si un texto es un palíndromo
+            boolean isPalindrome = communicator.isPalindrome("racecar");
+            System.out.println("Is palindrome: " + isPalindrome);
+
+            // Revertir un texto
+            String reversedText = communicator.reverseText("Hello, world!");
+            System.out.println("Reversed text: " + reversedText);
         }
     }
 }
