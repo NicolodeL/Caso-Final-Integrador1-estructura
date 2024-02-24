@@ -1,8 +1,6 @@
 package org.example.ejercicios;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.*;
 public class Main {
@@ -18,6 +16,9 @@ public class Main {
         System.out.println();
         System.out.println("Planificador de Tareas:");
         Ejercicio4.main(args);
+        System.out.println();
+        System.out.println("Navegador Estelar:");
+        Ejercicio5.main(args);
     }
 
     public static class Ejercicio1 {
@@ -224,5 +225,57 @@ public class Main {
             // Muestra el resultado de la carga de trabajo optimizada
         }
 
+    }
+    public static class Ejercicio5 {
+        private int[][] terrain;
+
+        public Ejercicio5(int size) {
+            this.terrain = new int[size][size];
+        }
+
+        public void generateTerrain() {
+            // Implementa la lógica para generar el terreno
+        }
+
+        public void displayTerrain() {
+            // Implementa la lógica para visualizar el terreno
+        }
+
+        public int[][] planRoute(int[][] planningMatrix) {
+            // Implementa la lógica para calcular la ruta de exploración y expansión
+            return new int[terrain.length][terrain[0].length];
+        }
+
+        public static int[][] multiplyMatrices(int[][] matrixA, int[][] matrixB) {
+            // Implementa la lógica para multiplicar matrices
+            return new int[matrixA.length][matrixB[0].length];
+        }
+        public static void main(String[] args) {
+            // Crear una instancia de Ejercicio5
+            Ejercicio5 starNavigator = new Ejercicio5(5);
+
+            // Generar el terreno
+            starNavigator.generateTerrain();
+
+            // Mostrar el terreno
+            starNavigator.displayTerrain();
+
+            // Crear una matriz de planificación
+            int[][] planningMatrix = new int[5][5];
+            // Aquí puedes llenar la matriz de planificación con los valores que desees
+
+            // Planificar una ruta
+            int[][] route = starNavigator.planRoute(planningMatrix);
+
+            // Crear dos matrices para multiplicar
+            int[][] matrixA = new int[5][5];
+            int[][] matrixB = new int[5][5];
+            // Aquí puedes llenar las matrices con los valores que desees
+
+            // Multiplicar las matrices
+            int[][] product = Ejercicio5.multiplyMatrices(matrixA, matrixB);
+
+            // Aquí puedes hacer algo con la ruta y el producto de las matrices, como mostrarlos
+        }
     }
 }
