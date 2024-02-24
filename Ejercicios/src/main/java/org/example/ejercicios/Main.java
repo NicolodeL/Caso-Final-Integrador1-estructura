@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.*;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Cronometro Cosmico:");
@@ -14,6 +15,9 @@ public class Main {
         System.out.println();
         System.out.println("Sistema de Alerta y Monitoreo:");
         Ejercicio3.main(args);
+        System.out.println();
+        System.out.println("Planificador de Tareas:");
+        Ejercicio4.main(args);
     }
 
     public static class Ejercicio1 {
@@ -162,5 +166,63 @@ public class Main {
             System.out.println("Critical events: " + ejercicio3.identifyCriticalEvents(5));
             System.out.println("Prime factors: " + ejercicio3.decomposeIntoPrimeFactors(60));
     }
+    }
+    public static class Ejercicio4 {
+        public class CrewMember {
+            private String name;
+            private int availability;
+
+            // Constructor, getters and setters
+        }
+
+        public class Task {
+            private String name;
+            private int duration;
+
+            // Constructor, getters and setters
+        }
+        public static class TaskScheduler {
+            private List<CrewMember> crewMembers;
+            private List<Task> tasks;
+
+            public TaskScheduler(List<CrewMember> crewMembers, List<Task> tasks) {
+                this.crewMembers = crewMembers;
+                this.tasks = tasks;
+            }
+
+            public Map<CrewMember, List<Task>> distributeTasks() {
+                // Implementa la lógica para distribuir las tareas entre los miembros de la tripulación
+                return new HashMap<>();
+            }
+
+            public void displaySchedule(Map<CrewMember, List<Task>> schedule) {
+                // Implementa la lógica para visualizar el horario y la carga de trabajo
+            }
+
+            public Map<CrewMember, Integer> calculateWorkload(Map<CrewMember, List<Task>> schedule) {
+                // Implementa la lógica para calcular la carga de trabajo óptima para cada miembro de la tripulación
+                return new HashMap<>();
+            }
+
+            public Map<CrewMember, Integer> optimizeWorkload(Map<CrewMember, Integer> workload) {
+                // Implementa la lógica para optimizar la carga de trabajo entre los miembros de la tripulación
+                return new HashMap<>();
+            }
+        }
+        public static void main(String[] args) {
+            List<CrewMember> crewMembers = new ArrayList<>();
+            List<Task> tasks = new ArrayList<>();
+
+            // Añade miembros de la tripulación y tareas a las listas
+
+            TaskScheduler scheduler = new TaskScheduler(crewMembers, tasks);
+            Map<CrewMember, List<Task>> schedule = scheduler.distributeTasks();
+            scheduler.displaySchedule(schedule);
+            Map<CrewMember, Integer> workload = scheduler.calculateWorkload(schedule);
+            Map<CrewMember, Integer> optimizedWorkload = scheduler.optimizeWorkload(workload);
+
+            // Muestra el resultado de la carga de trabajo optimizada
+        }
+
     }
 }
